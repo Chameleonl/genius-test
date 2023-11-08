@@ -207,7 +207,7 @@ header {
 }
 
 .traditions-content {
-  max: width 710px;
+  max-width: 710px;
 }
 
 .traditions-title {
