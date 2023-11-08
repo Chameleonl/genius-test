@@ -28,6 +28,8 @@
   --color-brand-light: #819b57;
   --color-primary-dark: #31261a;
   --color-primary-light: #faf4ea;
+  --color-secondary-border: #cfcfbc;
+  --color-secondary-shadow: #a28268;
 }
 
 /* Base */
@@ -42,6 +44,7 @@ body {
   font-weight: 400;
   line-height: 1.5;
   margin: 0;
+  background-color: var(--color-primary-light);
 }
 
 h1,
@@ -141,6 +144,10 @@ header {
 /* Hero section */
 .hero-section {
   padding: 272px 0;
+  background-image: url('../images/hero-section-background.jpg');
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
 }
 
 .hero-title {
@@ -177,6 +184,10 @@ header {
   font-size: 64px;
   font-weight: 900;
   line-height: 1.3;
+}
+
+.section-title.centered {
+  text-align: center;
 }
 
 .section-title .accent {
@@ -218,13 +229,28 @@ header {
 
 /* Chefs section */
 .chefs-title {
-  margin-bottom: 80px;
+  margin: 0 auto 80px;
+  max-width: 540px;
+}
+
+.chefs-title::before,
+.chefs-title::after {
+  display: block;
+  width: 352px;
+  border: 2px solid var(--color-border);
+  content: '';
 }
 
 .chef-title {
   font-size: 40px;
   font-weight: 600;
   margin-bottom: 16px;
+}
+
+.chef-photo {
+  border-radius: 4px 4px 4px 200px;
+  box-shadow: -16px 16px 0 0 var(--color-primary-light),
+    -16px 16px 0 2px var(--color-secondary-shadow);
 }
 
 /* Formats section */
@@ -248,6 +274,12 @@ header {
   padding: 24px;
   height: 444px;
   width: 349px;
+  background-image: linear-gradient(
+    180deg,
+    rgba(49, 38, 26, 0) 55.21%,
+    rgba(49, 38, 26, 0.71) 72.92%,
+    var(--color-primary-dark) 100%
+  );
 }
 
 .format-title {
@@ -266,8 +298,12 @@ header {
 }
 
 /* Footer */
-footer {
-  background-color: var(--color-brand-light); /* Remove*/
+.footer {
+  background-image: url('../images/footer-background.png');
+  background-color: var(--color-primary-dark);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .address-link {
