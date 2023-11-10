@@ -1,3 +1,4 @@
+/* Fonts */
 @font-face {
   font-display: swap;
   font-family: 'Poppins';
@@ -23,6 +24,7 @@
   src: url('../fonts/poppins-v20-latin-900.woff2') format('woff2');
 }
 
+/* Root */
 :root {
   --color-brand-dark: #465929;
   --color-brand-light: #819b57;
@@ -33,7 +35,9 @@
 }
 
 /* Base */
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -55,6 +59,10 @@ h5,
 h6,
 p {
   margin-top: 0;
+}
+
+a {
+  display: inline-block;
 }
 
 address {
@@ -237,7 +245,7 @@ header {
 .chefs-title::after {
   display: block;
   width: 352px;
-  border: 2px solid var(--color-border);
+  border: 2px solid var(--color-secondary-border);
   content: '';
 }
 
@@ -247,10 +255,33 @@ header {
   margin-bottom: 16px;
 }
 
+.chef-text p {
+  margin-bottom: 24px;
+}
+
+.chef-text p:last-child {
+  margin-bottom: 0;
+}
+
+.chefs-list {
+  display: flex;
+  gap: 40px 30px;
+  flex-wrap: wrap;
+}
+
+.chefs-item {
+  flex-basis: calc((100% - 30px) / 2);
+}
+
 .chef-photo {
   border-radius: 4px 4px 4px 200px;
   box-shadow: -16px 16px 0 0 var(--color-primary-light),
     -16px 16px 0 2px var(--color-secondary-shadow);
+}
+
+.chef-card {
+  display: flex;
+  gap: 30px;
 }
 
 /* Formats section */
@@ -258,8 +289,14 @@ header {
   margin-bottom: 80px;
 }
 
+.formats-container {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
 .formats-item {
-  flex-basis: calc((100% -40px) / 3);
+  flex-basis: calc((100% - 40px) / 3);
 }
 
 .formats-list {
@@ -292,9 +329,45 @@ header {
   font-weight: 300;
 }
 
+/* Carousel */
+.carousel-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--color-primary-dark);
+  padding: 0;
+  cursor: pointer;
+  fill: var(--color-primary-dark);
+  flex-shrink: 0;
+}
+
+.carousel-button:hover {
+  background-color: var(--color-primary-dark);
+  fill: var(--color-primary-light);
+}
+
 /* Contacts section */
+.contacts-section {
+  padding-bottom: 96px;
+}
+
+.contact-container {
+  display: flex;
+  gap: 30px;
+}
+
 .contacts-title {
   margin-bottom: 16px;
+}
+
+.contact-map {
+  border: none;
+  border-radius: 16px;
+  flex-shrink: 0;
 }
 
 /* Footer */
@@ -304,6 +377,29 @@ header {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  padding: 32px 0;
+}
+
+.footer-container {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-nav,
+.footer-address {
+  flex-basis: 50%;
+  display: flex;
+  gap: 20px;
+}
+
+.footer-logo,
+.footer-menu {
+  flex-grow: 1;
+}
+
+.address-list,
+.address-info {
+  flex-grow: 1;
 }
 
 .address-link {
@@ -318,6 +414,14 @@ header {
   font-size: 16px;
   font-weight: 300;
   text-decoration: none;
+}
+
+.address-icon {
+  fill: var(--color-primary-light);
+}
+
+.address-icon:hover {
+  fill: var(--color-brand-light);
 }
 
 .address-copyright {
