@@ -26,10 +26,11 @@
 
 /* Root */
 :root {
-  --color-brand-dark: #465929;
-  --color-brand-light: #819b57;
-  --color-primary-dark: #31261a;
   --color-primary-light: #faf4ea;
+  --color-primary-dark: #31261a;
+  --color-primary-green: #819b57;
+  --color-secondary-green: #465929;
+  --color-secondary-copyright: #a18268;
   --color-secondary-border: #cfcfbc;
   --color-secondary-shadow: #a28268;
 }
@@ -39,6 +40,14 @@
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+.accent-light {
+  color: var(--color-primary-green);
+}
+
+.accent-dark {
+  color: var(--color-secondary-green);
 }
 
 body {
@@ -98,8 +107,8 @@ ul {
 /* Button */
 .button {
   color: var(--color-primary-light);
-  background-color: var(--color-brand-light);
-  border: 2px solid var(--color-brand-light);
+  background-color: var(--color-primary-green);
+  border: 2px solid var(--color-primary-green);
   border-radius: 8px;
   cursor: pointer;
   font-weight: 600;
@@ -107,9 +116,9 @@ ul {
 }
 
 .button:hover {
-  color: var(--color-brand-dark);
+  color: var(--color-secondary-green);
   background-color: transparent;
-  border: 2px solid var(--color-brand-light);
+  border: 2px solid var(--color-primary-green);
   border-radius: 8px;
 }
 
@@ -120,13 +129,13 @@ ul {
 }
 
 .link:hover {
-  color: var(--color-brand-light);
+  color: var(--color-primary-green);
   text-decoration: none;
 }
 
 /* Header */
 header {
-  background-color: var(--color-brand-light); /* Remove */
+  background-color: var(--color-primary-green); /* Remove */
 }
 
 .header-container {
@@ -166,13 +175,9 @@ header {
   text-align: center;
 }
 
-.hero-title .accent {
-  color: var(--color-brand-light);
-}
-
 /* Advantages section */
 .advantages-section {
-  background-color: var(--color-brand-light);
+  background-color: var(--color-primary-green);
   padding: 16px 0;
 }
 
@@ -198,10 +203,6 @@ header {
   text-align: center;
 }
 
-.section-title .accent {
-  color: var(--color-brand-dark);
-}
-
 /* Traditions section */
 .traditions-section {
   padding-top: 96px;
@@ -223,7 +224,7 @@ header {
 }
 
 .traditions-text .brand {
-  color: var(--color-brand-light);
+  color: var(--color-primary-green);
   font-weight: 600;
 }
 
@@ -238,21 +239,26 @@ header {
 /* Chefs section */
 .chefs-title {
   margin: 0 auto 80px;
-  max-width: 540px;
+  font-size: 64px;
+  font-weight: 900;
+  position: relative;
 }
 
 .chefs-title::before,
 .chefs-title::after {
-  display: block;
-  width: 352px;
   border: 2px solid var(--color-secondary-border);
+  bottom: 0;
   content: '';
+  position: absolute;
+  width: 352px;
 }
 
-.chef-title {
-  font-size: 40px;
-  font-weight: 600;
-  margin-bottom: 16px;
+.chefs-title::before {
+  left: 0;
+}
+
+.chefs-title::after {
+  right: 0;
 }
 
 .chef-text p {
@@ -317,6 +323,7 @@ header {
     rgba(49, 38, 26, 0.71) 72.92%,
     var(--color-primary-dark) 100%
   );
+  text-align: center;
 }
 
 .format-title {
@@ -378,6 +385,29 @@ header {
   background-size: cover;
   background-position: center;
   padding: 32px 0;
+  position: relative;
+}
+
+.footer::before,
+.footer::after {
+  background-repeat: no-repeat;
+  bottom: 0;
+  content: '';
+  position: absolute;
+}
+
+.footer::before {
+  background-image: url(../images/decor-bread-small.png);
+  left: 0;
+  width: 180px;
+  height: 120px;
+}
+
+.footer::after {
+  background-image: url(../images/decor-bread-large.png);
+  right: 0;
+  width: 380px;
+  height: 190px;
 }
 
 .footer-container {
@@ -410,7 +440,7 @@ header {
 }
 
 .address-link:hover {
-  color: var(--color-brand-light);
+  color: var(--color-primary-green);
   font-size: 16px;
   font-weight: 300;
   text-decoration: none;
@@ -421,9 +451,43 @@ header {
 }
 
 .address-icon:hover {
-  fill: var(--color-brand-light);
+  fill: var(--color-primary-green);
 }
 
 .address-copyright {
   font-size: 14px;
+  color: var(--color-secondary-copyright);
+}
+
+/* Modal window */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(49, 38, 26, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.modal {
+  border-radius: 32px;
+  width: 880px;
+  height: 880px;
+  background-color: var(--color-primary-light);
+  position: relative;
+}
+
+.modal-btn-close {
+  position: absolute;
+  top: 40px;
+  right: 40px;
 }

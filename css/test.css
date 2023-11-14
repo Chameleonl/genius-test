@@ -2,16 +2,33 @@
   box-sizing: border-box;
 }
 
-.flex-container {
-  display: flex;
-  justify-content: center;
+.container {
+  border: 1px dotted black;
+  padding: 20px;
 }
 
-.item {
-  flex-basis: 100px;
+.parent {
+  border: 1px dotted black;
+  padding: 20px;
+}
+
+.red {
+  background-color: red;
+  height: 150px;
+  width: 150px;
+  overflow: auto;
+}
+
+.green {
+  background-color: green;
   height: 100px;
-  background-color: burlywood;
-  padding: 10px;
-  border: 5px solid darkred;
-  margin: 10px;
+  width: 100px;
+  top: 0;
+  left: 0;
+}
+
+.blue {
+  background-color: blue;
+  height: 50px;
+  width: 50px;
 }
