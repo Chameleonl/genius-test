@@ -122,6 +122,13 @@ ul {
   border-radius: 8px;
 }
 
+.button:disabled {
+  color: gray;
+  background-color: lightgray;
+  border-color: currentColor;
+  cursor: not-allowed;
+}
+
 /* Link */
 .link {
   color: var(--color-primary-light);
@@ -545,12 +552,31 @@ header {
 .form-input:focus {
   border-color: var(--color-primary-green);
   outline: none;
+  color: var(--color-primary-dark);
+}
+
+.form-input:hover {
+  border-color: var(--color-primary-green);
+  outline: none;
+  color: var(--color-primary-dark);
+}
+
+.form-input:disabled {
+  border-color: lightgray;
+  outline: none;
+  cursor: not-allowed;
 }
 
 .form-input::placeholder {
   color: var(--color-secondary-copyright);
   font-size: 16px;
   line-height: 1.17;
+}
+
+.form-input:disabled::placeholder {
+  border-color: lightgray;
+  outline: none;
+  cursor: not-allowed;
 }
 
 .form-input:focus::placeholder {

@@ -218,6 +218,7 @@
                     name="user-name"
                     type="text"
                     placeholder="Ім'я"
+                    required
                   />
                 </div>
 
@@ -231,6 +232,7 @@
                     name="user-tel"
                     type="tel"
                     placeholder="Телефон"
+                    required
                   />
                 </div>
 
@@ -244,6 +246,7 @@
                     name="user-email"
                     type="email"
                     placeholder="Електронна пошта"
+                    required
                   />
                 </div>
                 <button class="form-button button" type="submit">
@@ -337,12 +340,12 @@
       </div>
     </footer>
 
-    <div class="backdrop is-hidden">
+    <div class="backdrop">
       <div class="modal">
         <button class="modal-btn-close" type="button">Close</button>
         <h2 class="form-header">Замовити дзвінок</h2>
         <p>Залишіть заявку та наш спеціаліст зв'яжеться з Вами!</p>
-        <form name="modal-form" autocomplete="off" novalidate>
+        <form name="modal-form" autocomplete="off">
           <div class="form-field">
             <label class="form-label visually-hidden" for="user-name">
               Ім'я
@@ -353,6 +356,9 @@
               name="user-name"
               type="text"
               placeholder="Ім'я"
+              required
+              minlength="2"
+              maxlength="20"
             />
           </div>
 
@@ -366,6 +372,8 @@
               name="user-tel"
               type="tel"
               placeholder="Телефон"
+              pattern="^\+[0-9]{12}"
+              required
             />
           </div>
           <div class="form-field">
@@ -378,6 +386,7 @@
               name="user-email"
               type="email"
               placeholder="Електронна пошта"
+              required
             />
           </div>
 
