@@ -1,0 +1,23 @@
+.accent-light {
+  color: var(--color-primary-green);
+}
+
+.accent-dark {
+  color: var(--color-secondary-green);
+}
+
+.limited {
+  max-width: 340px;
+}
+
+.text-bold {
+  font-weight: 600;
+}
+
+.text-centered {
+  text-align: center;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
