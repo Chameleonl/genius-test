@@ -16,7 +16,7 @@
       <div class="container">
         <div class="header__container">
           <nav class="header__nav">
-            <a href="/">
+            <a class="header__logo" href="/">
               <img src="./images/logo.svg" alt="Shop Bakery logo" />
             </a>
             <ul class="header__menu">
@@ -33,10 +33,10 @@
                 <a class="link" href="#contacts-section">Контакти</a>
               </li>
             </ul>
+            <button class="button modal-btn-open" type="button">
+              Замовити дзвінок
+            </button>
           </nav>
-          <button class="button modal-btn-open" type="button">
-            Замовити дзвінок
-          </button>
         </div>
       </div>
     </header>
@@ -290,7 +290,11 @@
                 </button>
                 <p class="form-terms">
                   Натискаючи на кнопку я погоджуюсь
-                  <a class="form-terms__link" href="#"
+                  <a
+                    class="form-terms__link"
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     >з політикою конфіденційності</a
                   >
                 </p>
@@ -413,8 +417,12 @@
         <button class="modal__btn-close modal-btn-close" type="button">
           Close
         </button>
-        <h2>Замовити дзвінок</h2>
-        <p>Залишіть заявку та наш спеціаліст зв'яжеться з Вами!</p>
+        <h2 class="modal__title section__title text-centered">
+          Замовити дзвінок
+        </h2>
+        <p class="modal__description text-centered">
+          Залишіть заявку та наш спеціаліст зв'яжеться з Вами!
+        </p>
         <form name="modal-form" autocomplete="off">
           <div class="modal__form-field input">
             <label class="input__label visually-hidden" for="user-name">
@@ -465,7 +473,12 @@
           </button>
           <p class="form-terms">
             Натискаючи на кнопку я погоджуюсь
-            <a class="form-terms__link" href="#">
+            <a
+              class="form-terms__link"
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               з політикою конфіденційності
             </a>
           </p>

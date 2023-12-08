@@ -8,14 +8,16 @@
   &__container {
     display: flex;
     align-items: center;
-    gap: 40px;
   }
 
   &__nav {
     align-items: center;
     display: flex;
-    flex-grow: 1;
-    gap: 40px;
+    gap: 152px;
+  }
+
+  &__logo {
+    width: 114px;
   }
 
   &__menu {
