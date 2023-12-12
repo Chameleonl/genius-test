@@ -27,7 +27,9 @@
       font-size: 18px;
     }
     &--limited {
-      max-width: 340px;
+      @media screen and (min-width: $bp-tablet) {
+        max-width: 340px;
+      }
     }
   }
 
